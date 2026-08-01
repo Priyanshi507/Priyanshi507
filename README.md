@@ -1,15 +1,11 @@
 # Priyanshi Sharma
 
-**B.Tech Computer Science** · Lloyd Institute of Engineering and Technology, Greater Noida (2024–2028)
+B.Tech Computer Science · Lloyd Institute of Engineering and Technology, Greater Noida (2024–2028)
 
-**Google Summer of Code 2026** · STE||AR Group (HPX)
-*Use C++26 Reflection for HPX Remote Operations*
+## Google Summer of Code 2026 — STE||AR Group (HPX)
+**C++26 Reflection for HPX Remote Operations**
 
----
-
-## GSoC 2026 — HPX
-
-Implementing C++26 static reflection (P2996) to eliminate macro boilerplate in HPX's distributed action system. Before this work, defining a remote operation required three verbose macro steps. After:
+Implementing C++26 static reflection (P2996) to eliminate macro boilerplate in HPX's distributed action system.
 
 ```cpp
 // Before
@@ -21,26 +17,22 @@ HPX_REGISTER_ACTION(compute_action)
 using compute_action = hpx::actions::reflect_action<^^app::compute>;
 ```
 
-**Merged PRs:** reflect_action · reflect_component_action · reflect_component_direct_action · reflect_direct_action · compile-time benchmarks · CI workflow fixes · migration guide documentation
+- Merged PRs: `reflect_action` · `reflect_component_action` · `reflect_component_direct_action` · `reflect_direct_action` · compile-time benchmarks · CI workflow fixes · migration guide
+- Reflection path ~1.2–1.4x faster than macro expansion at runtime (Release, GCC 16.0.1 trunk)
+- Full backwards compatibility — existing `HPX_PLAIN_ACTION` code requires zero changes
 
-**Key results:**
-- Reflection path is ~1.2–1.4x faster than macro expansion at runtime (Release mode, GCC 16.0.1 trunk)
-- Compile time: equal or faster across N=10–100 action definitions, never slower
-- Full backwards compatibility — existing HPX_PLAIN_ACTION code requires zero changes
+## Open Source — RISC-V Unified Database
+Contributing to [riscv/riscv-unified-db](https://github.com/riscv/riscv-unified-db), the machine-readable RISC-V specification database used to generate simulators, docs, and toolchains.
 
----
+- Documented the `sext` IDL standard library function ([#2260](https://github.com/riscv/riscv-unified-db/pull/2260), merged)
+- Data corrections to architectural parameter definitions ([#2288](https://github.com/riscv/riscv-unified-db/pull/2288), [#2296](https://github.com/riscv/riscv-unified-db/pull/2296))
 
 ## Technical Skills
-
-**Languages:** C++20/26 · Python · Java · C  
-**C++ expertise:** Templates · CRTP · consteval · C++26 reflection (std::meta, P2996)  
-**Systems:** Distributed computing (HPX) · CMake · Ninja · Docker · GitHub Actions CI/CD  
-**Practices:** Open source contribution · code review · test-driven development
-
----
+**Languages:** Python · C++20/26 · SQL · PHP · JavaScript
+**C++ depth:** Templates · CRTP · consteval · C++26 reflection (`std::meta`, P2996)
+**Systems:** Distributed computing (HPX) · CMake · Docker · GitHub Actions CI/CD
+**Data:** YAML-based data modeling · JSON Schema validation
 
 ## Contact
-
-- **GitHub:** [github.com/Priyanshi507](https://github.com/Priyanshi507)
-- **LinkedIn:** [linkedin.com/in/priyanshi-sharma-62a431337](https://linkedin.com/in/priyanshi-sharma-62a431337)
-- **Email:** hiiuiuiabi@gmail.com
+GitHub: [github.com/Priyanshi507](https://github.com/Priyanshi507)
+LinkedIn: [linkedin.com/in/priyanshi-sharma-62a431337](https://linkedin.com/in/priyanshi-sharma-62a431337)
