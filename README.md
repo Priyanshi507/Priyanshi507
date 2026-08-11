@@ -1,6 +1,6 @@
 # Priyanshi Sharma
 
-B.Tech Computer Science · Lloyd Institute of Engineering and Technology, Greater Noida (2024–2028)
+B.Tech Computer Science · Lloyd Institute of Engineering and Technology (2024–2028)
 
 ## Google Summer of Code 2026 — STE||AR Group (HPX)
 **C++26 Reflection for HPX Remote Operations**
