@@ -27,12 +27,6 @@ Contributing to [riscv/riscv-unified-db](https://github.com/riscv/riscv-unified-
 - Documented the `sext` IDL standard library function ([#2260](https://github.com/riscv/riscv-unified-db/pull/2260), merged)
 - Data corrections to architectural parameter definitions ([#2288](https://github.com/riscv/riscv-unified-db/pull/2288), [#2296](https://github.com/riscv/riscv-unified-db/pull/2296))
 
-## Technical Skills
-**Languages:** Python · C++20/26 · SQL · PHP · JavaScript
-**C++ depth:** Templates · CRTP · consteval · C++26 reflection (`std::meta`, P2996)
-**Systems:** Distributed computing (HPX) · CMake · Docker · GitHub Actions CI/CD
-**Data:** YAML-based data modeling · JSON Schema validation
-
 ## Distributed LLM Inference Server
 
 Building a distributed inference-serving layer on top of HPX — orchestrating
@@ -49,6 +43,13 @@ benchmarked rigorously enough to trust the numbers.
 **Stack:** HPX (async orchestration) · llama.cpp (Metal-accelerated inference) · C++20
 
 Repo: [github.com/Priyanshi507/hpx-distributed-inference](https://github.com/Priyanshi507/hpx-distributed-inference)
+
+
+## Technical Skills
+**Languages:** Python · C++20/26 · SQL · PHP · JavaScript
+**C++ depth:** Templates · CRTP · consteval · C++26 reflection (`std::meta`, P2996)
+**Systems:** Distributed computing (HPX) · CMake · Docker · GitHub Actions CI/CD
+**Data:** YAML-based data modeling · JSON Schema validation
 
 ## Contact
 GitHub: [github.com/Priyanshi507](https://github.com/Priyanshi507)
