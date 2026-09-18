@@ -33,6 +33,23 @@ Contributing to [riscv/riscv-unified-db](https://github.com/riscv/riscv-unified-
 **Systems:** Distributed computing (HPX) · CMake · Docker · GitHub Actions CI/CD
 **Data:** YAML-based data modeling · JSON Schema validation
 
+## Distributed LLM Inference Server
+
+Building a distributed inference-serving layer on top of HPX — orchestrating
+multiple llama.cpp workers with session-affinity and load-aware routing,
+benchmarked rigorously enough to trust the numbers.
+
+- Three routing policies (round-robin, sticky, hybrid) compared head-to-head
+  across multiple trials with position-bias controls
+- Hybrid load-aware routing: 2.5–4x lower compute time than naive round-robin,
+  with real backpressure (condition-variable-based admission control)
+- Sticky cache-affinity routing: ~38% lower mean prompt-processing latency
+  vs. round-robin, isolated from generation-length noise
+
+**Stack:** HPX (async orchestration) · llama.cpp (Metal-accelerated inference) · C++20
+
+Repo: [github.com/Priyanshi507/hpx-distributed-inference](https://github.com/Priyanshi507/hpx-distributed-inference)
+
 ## Contact
 GitHub: [github.com/Priyanshi507](https://github.com/Priyanshi507)
 LinkedIn: [linkedin.com/in/priyanshi-sharma-62a431337](https://linkedin.com/in/priyanshi-sharma-62a431337)
