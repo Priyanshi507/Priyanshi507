@@ -1,11 +1,26 @@
-# Priyanshi Sharma
+## Priyanshi Sharma
 
-B.Tech Computer Science · Lloyd Institute of Engineering and Technology (2024–2028)
+B.Tech CSE (AI & ML), 3rd year, Lloyd Institute of Engineering and Technology, Greater Noida. Google Summer of Code 2026 contributor with the STE||AR Group (HPX).
 
-## Google Summer of Code 2026 — STE||AR Group (HPX)
-**C++26 Reflection for HPX Remote Operations**
+I work on two things: C++26 reflection for a distributed runtime, and a pre-registered study of Formula 1's 2026 energy rules.
 
-Implementing C++26 static reflection (P2996) to eliminate macro boilerplate in HPX's distributed action system.
+### ERS-Lens: Formula 1 2026 energy deployment
+
+The 2026 cars split power between the engine and a battery, and drivers slow down on straights when the battery runs dry (super-clipping). ERS-Lens works out the lap-time-optimal way to spend the battery and tests that against real laps.
+
+- Dynamic programming over position, speed and charge, written in JAX with a CUDA kernel and a NumPy twin
+- Every result comes with a weak-duality certificate that bounds how far a solution can be from optimal
+- Built on public OpenF1 telemetry only
+- Predictions were written down with pass marks before the data was run, and the ones that failed are in the log next to the ones that held
+- One prediction held on 17 of 17 circuits; others held on 15 of 18 and 13 of 16
+- 2027 forecast frozen before the season: SHA-256 recorded, tagged `forecast-2027-v1`, archived on Zenodo (DOI 10.5281/zenodo.24238738) and registered on OSF (https://osf.io/fh6mx)
+- 197 tests, and one command rebuilds every headline number from the committed results with no GPU
+
+Repo: [github.com/Priyanshi507/ers-lens](https://github.com/Priyanshi507/ers-lens)
+
+### GSoC 2026: C++26 reflection for HPX
+
+Replacing the macro boilerplate for HPX actions with static reflection.
 
 ```cpp
 // Before
@@ -13,44 +28,27 @@ HPX_PLAIN_ACTION(app::compute, compute_action)
 HPX_REGISTER_ACTION_DECLARATION(compute_action)
 HPX_REGISTER_ACTION(compute_action)
 
-// After — single line, auto-registration, zero boilerplate
+// After: one line, auto-registration
 using compute_action = hpx::actions::reflect_action<^^app::compute>;
 ```
 
-- Merged PRs: `reflect_action` · `reflect_component_action` · `reflect_component_direct_action` · `reflect_direct_action` · compile-time benchmarks · CI workflow fixes · migration guide
-- Reflection path ~1.2–1.4x faster than macro expansion at runtime (Release, GCC 16.0.1 trunk)
-- Full backwards compatibility — existing `HPX_PLAIN_ACTION` code requires zero changes
+- Merged PRs: `reflect_action`, `reflect_component_action`, `reflect_component_direct_action`, `reflect_direct_action`, compile-time benchmarks, CI workflow fixes, migration guide
+- Reflection path about 1.2-1.4x faster than macro expansion at runtime (Release, GCC 16.0.1 trunk)
+- Fully backwards compatible: existing `HPX_PLAIN_ACTION` code needs no changes
 
-## Open Source — RISC-V Unified Database
-Contributing to [riscv/riscv-unified-db](https://github.com/riscv/riscv-unified-db), the machine-readable RISC-V specification database used to generate simulators, docs, and toolchains.
+Repo: [github.com/Priyanshi507/hpx-gsoc-2026](https://github.com/Priyanshi507/hpx-gsoc-2026)
 
-- Documented the `sext` IDL standard library function ([#2260](https://github.com/riscv/riscv-unified-db/pull/2260), merged)
-- Data corrections to architectural parameter definitions ([#2288](https://github.com/riscv/riscv-unified-db/pull/2288), [#2296](https://github.com/riscv/riscv-unified-db/pull/2296))
+### Other open source
 
-## Distributed LLM Inference Server
+- **Spack** (HPC package manager): merged PRs in [spack-packages](https://github.com/spack/spack-packages) (#7204, #7205); reviewed the PURL support for SPDX SBOMs in spack/spack#53193
+- **RISC-V Unified Database:** documented the `sext` IDL function (riscv-unified-db#2260, merged)
 
-Building a distributed inference-serving layer on top of HPX — orchestrating
-multiple llama.cpp workers with session-affinity and load-aware routing,
-benchmarked rigorously enough to trust the numbers.
+### Skills
 
-- Three routing policies (round-robin, sticky, hybrid) compared head-to-head
-  across multiple trials with position-bias controls
-- Hybrid load-aware routing: 2.5–4x lower compute time than naive round-robin,
-  with real backpressure (condition-variable-based admission control)
-- Sticky cache-affinity routing: ~38% lower mean prompt-processing latency
-  vs. round-robin, isolated from generation-length noise
+**Languages:** Python, C++20/26, SQL, PHP, JavaScript
+**C++ depth:** templates, CRTP, consteval, C++26 reflection (`std::meta`, P2996)
+**Systems and tools:** distributed computing (HPX), JAX, CUDA, CMake, Docker, GitHub Actions
 
-**Stack:** HPX (async orchestration) · llama.cpp (Metal-accelerated inference) · C++20
+### Contact
 
-Repo: [github.com/Priyanshi507/hpx-distributed-inference](https://github.com/Priyanshi507/hpx-distributed-inference)
-
-
-## Technical Skills
-**Languages:** Python · C++20/26 · SQL · PHP · JavaScript
-**C++ depth:** Templates · CRTP · consteval · C++26 reflection (`std::meta`, P2996)
-**Systems:** Distributed computing (HPX) · CMake · Docker · GitHub Actions CI/CD
-**Data:** YAML-based data modeling · JSON Schema validation
-
-## Contact
-GitHub: [github.com/Priyanshi507](https://github.com/Priyanshi507)
-LinkedIn: [linkedin.com/in/priyanshi-sharma-62a431337](https://linkedin.com/in/priyanshi-sharma-62a431337)
+GitHub: [Priyanshi507](https://github.com/Priyanshi507) · LinkedIn: [priyanshi-sharma](https://linkedin.com/in/priyanshi-sharma-62a431337)
